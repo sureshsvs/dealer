@@ -1,0 +1,21 @@
+@use './_variables.scss' as vars;
+
+:root {
+  --bg-color: #{vars.$bg-color-dark};
+  --text-color: #{vars.$text-color-dark};
+  --primary-color: #{vars.$primary-color-dark};
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
