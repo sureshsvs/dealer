@@ -1,18 +1,8 @@
 import React, { createContext, useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+
 import user from '../assets/user.jpg';
 
 export default function Sidebar({isOpen }) {
-  const { logout } = useAuth();
-  const navigate = useNavigate();
-
-  
-
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
 
 
   return (
@@ -43,7 +33,7 @@ export default function Sidebar({isOpen }) {
     </div>
 </div>
 <div className="navbar-nav w-100">
-    <a href="/dashboard" className="nav-item nav-link active"><i className="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+    <a href="/" className="nav-item nav-link active"><i className="fa fa-tachometer-alt me-2"></i>Dashboard</a>
     <a href="/serviceEntry" className="nav-item nav-link"><i className="fa fa-gear me-2"></i>Service Entry</a>
     <a href="/vehicletracking" className="nav-item nav-link"><i className="fa fa-map me-2"></i>Vehicle Tracking</a>
     <a href="/customercreation" className="nav-item nav-link"><i className="fa fa-user-plus"></i>Customer Creation</a>

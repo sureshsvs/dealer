@@ -1,7 +1,18 @@
 import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import user from '../assets/user.jpg';
 export default function TopNav({toogleMenu}) {
- 
+    const { logout } = useAuth();
+    const navigate = useNavigate();
+  
+    
+  
+    const handleLogout = () => {
+      logout();
+      navigate('/login');
+    };
+  
   return (
     <>
      <nav className="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
@@ -86,7 +97,7 @@ export default function TopNav({toogleMenu}) {
                         <div className="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" className="dropdown-item">My Profile</a>
                             <a href="#" className="dropdown-item">Settings</a>
-                            <a href="#" className="dropdown-item">Log Out</a>
+                            <a href="#" onClick={()=>handleLogout()} className="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>

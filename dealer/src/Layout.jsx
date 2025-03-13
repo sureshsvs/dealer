@@ -8,6 +8,12 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Login from './pages/Login';
 import {useAuth } from './context/AuthContext';
+import ServiceEntry from './pages/ServicesEntry';
+import CustomerFeedback from './pages/CustomerFeedback';
+import MechanicCreation from './pages/MechanicCreation';
+import Cartracking from './pages/CarTracking';
+import CustomerCreation from './pages/CustomerCreation';
+import VehicleTracking from './pages/CarTracking';
 
 function PrivateRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -31,9 +37,12 @@ const toogleMenu=()=>{
                 <div className={isOpen ? "content open":"content"}>
                 <TopNav toogleMenu={toogleMenu}/>               
                 <Routes>
-                <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-                <Route path="/serviceEntry" element={<PrivateRoute><About /></PrivateRoute>} />
-                <Route path="/services" element={<PrivateRoute><Services /></PrivateRoute>} />
+                <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                <Route path="/serviceEntry" element={<PrivateRoute><ServiceEntry /></PrivateRoute>} />
+                <Route path="/customerCreation" element={<PrivateRoute><CustomerCreation /></PrivateRoute>} />
+                <Route path="/mechanicCreation" element={<PrivateRoute><MechanicCreation /></PrivateRoute>} />
+                <Route path="/customerFeedback" element={<PrivateRoute><CustomerFeedback /></PrivateRoute>} />
+                <Route path="/vehicletracking" element={<PrivateRoute><VehicleTracking/></PrivateRoute>} />
                 <Route path="/login" element={<Login />} />
                 </Routes> 
               </div>
